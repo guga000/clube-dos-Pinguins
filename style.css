@@ -1,0 +1,178 @@
+body {
+    margin: 0;
+    font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif; /* Font fofinha */
+    background-color: #87ceeb; /* Azul céu */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#game-world {
+    width: 800px;
+    height: 600px;
+    background-color: #f0f8ff; /* Neve branquinha */
+    border: 10px solid #ffffff;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+/* O nosso Pinguim herói */
+#player-penguin {
+    width: 60px;
+    height: 75px;
+    background-color: #2c3e50; /* Cor de pinguim */
+    border-radius: 50% 50% 40% 40%;
+    position: absolute;
+    top: 250px;
+    left: 350px;
+    transition: top 0.1s linear, left 0.1s linear; /* Movimento suave */
+    z-index: 10;
+}
+
+/* A barriga branca do pinguim */
+#player-penguin::before {
+    content: '';
+    position: absolute;
+    width: 45px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50% 50% 40% 40%;
+    top: 20px;
+    left: 7.5px;
+}
+
+.eye {
+    width: 10px;
+    height: 12px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    z-index: 1;
+}
+
+.eye::after { /* Pupila */
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: black;
+    border-radius: 50%;
+    top: 4px;
+    left: 2.5px;
+}
+
+.eye.left { left: 15px; }
+.eye.right { right: 15px; }
+
+.beak {
+    width: 15px;
+    height: 10px;
+    background-color: #f39c12; /* Laranja */
+    border-radius: 2px 2px 50% 50%;
+    position: absolute;
+    top: 30px;
+    left: 22.5px;
+    z-index: 1;
+}
+
+/* O Puffle fofinho */
+#puffle {
+    width: 40px;
+    height: 35px;
+    background-color: #e74c3c; /* Puffle vermelho */
+    border-radius: 50%;
+    position: absolute;
+    top: 300px;
+    left: 300px;
+    z-index: 5;
+    transition: top 0.3s ease-out, left 0.3s ease-out; /* Segue mais devagar */
+}
+
+.puffle-hair {
+    width: 15px;
+    height: 15px;
+    background-color: #e74c3c;
+    border-radius: 50%;
+    position: absolute;
+    top: -8px;
+    left: 12.5px;
+    box-shadow: 0 0 0 3px #f0f8ff, /* Contorno para separar */
+                -6px 2px 0 0 #e74c3c,
+                -10px -2px 0 0 #e74c3c;
+}
+.puffle-eye {
+    width: 8px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+}
+.puffle-eye.left { left: 8px; }
+.puffle-eye.right { right: 8px; }
+.puffle-eye::after { /* Pupila */
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: black;
+    border-radius: 50%;
+    top: 3px;
+    left: 2px;
+}
+
+/* Cenário */
+.building {
+    position: absolute;
+    width: 150px;
+    height: 180px;
+    background-color: #3498db;
+    border-radius: 10px 10px 0 0;
+    border: 5px solid #2980b9;
+    bottom: 0;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.building:hover {
+    transform: scale(1.05);
+}
+.building span {
+    background-color: #ecf0f1;
+    padding: 5px 15px;
+    border-radius: 5px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #2c3e50;
+    font-weight: bold;
+}
+#ice-shop {
+    left: 50px;
+    background-color: #1abc9c;
+    border-color: #16a085;
+}
+
+#instructions {
+    margin-top: 20px;
+    color: white;
+    font-size: 1.2em;
+    text-shadow: 2px 2px 4px #333;
+    text-align: center;
+}
+
+#special-message {
+    margin-top: 10px;
+    font-size: 0.8em;
+}
+
+/* O pinguim vira-se para a esquerda/direita! */
+#player-penguin.facing-left {
+    transform: scaleX(-1);
+}
