@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Fofo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-world">
+        <!-- O nosso pinguim jogador -->
+        <div id="player-penguin">
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+            <div class="beak"></div>
+        </div>
+
+        <!-- Um Puffle amigo que nos segue -->
+        <div id="puffle">
+            <div class="puffle-hair"></div>
+            <div class="puffle-eye left"></div>
+            <div class="puffle-eye right"></div>
+        </div>
+
+        <!-- Elementos do cenário -->
+        <div id="ice-shop" class="building">
+            <span>Loja</span>
+        </div>
+
+        <div id="tree"></div>
+    </div>
+
+    <div id="instructions">
+        Usa as setas do teclado para mover o pinguim!
+        <p id="special-message">Feito com carinho para a melhor namorada do mundo ❤️</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
